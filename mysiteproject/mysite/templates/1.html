@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Ordering notes</title>
+</head>
+
+<body>
+<p>Dear {{ person_name }},</p>
+<p> Thanks for placing an order from {{ commapy }}.it's scheduled to ship on
+    {{ ship_data|date:"F j,Y" }}.</p>
+<p> Here are the items you're ordered:</p>
+
+<u1>
+    {% for item in item_list %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</u1>
+
+
+{% if ordered_warranty %}
+<p> your warranty information will be included in packaging.</p>
+
+{% endif %}
+<p>sincerely,<br/>{{ company }}<p>
+
+</body>
+
+</html>
